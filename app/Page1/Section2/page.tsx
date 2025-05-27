@@ -67,6 +67,7 @@ const page = () => {
                     <Image 
                     src={image.img}
                     alt={image.title}
+                    className="pointer-events-none"
                     />
 
                     <p className="text-[16px]">{image.title}</p>
@@ -80,7 +81,7 @@ const page = () => {
             <Image
             src={globe}
             alt="globe"
-            className="w-[800px] relative  lg:top-48 "
+            className="w-[800px] relative  lg:top-48 pointer-events-none"
             />
         </div>
       </div>

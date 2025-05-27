@@ -1,12 +1,12 @@
 import React from "react";
 
-import img1 from "../../../assets/page1_section4_img1.png";
-import img2 from "../../../assets/page1_section4_img2.png";
-import img3 from "../../../assets/page1_section4_img3.png";
-import img4 from "../../../assets/page1_section4_img4.png";
-import img5 from "../../../assets/page1_section4_img5.png";
-import img6 from "../../../assets/page1_section4_img6.png";
-import img7 from "../../../assets/page1_section4_img7.png";
+import img1 from "../../../assets/page2_section4_img1.png";
+import img2 from "../../../assets/page2_section4_img2.png";
+import img3 from "../../../assets/page2_section4_img3.png";
+import img4 from "../../../assets/page2_section4_img4.png";
+import img5 from "../../../assets/page2_section4_img5.png";
+import img6 from "../../../assets/page2_section4_img6.png";
+import img7 from "../../../assets/page2_section4_img7.png";
 
 import pattern from "../../../assets/page1_section4_pattern.png";
 import Image from "next/image";
@@ -61,28 +61,24 @@ const page = () => {
   return (
     <div className="px-[5%] overflow-x-clip py-12 flex flex-col gap-6 overflow-hidden">
       {/* top */}
-      <div className="flex flex-row">
+      <div className="flex flex-row justify-between">
         <div>
-            <h2 className="text-[#FC670F] text-[32px]">
-          Businesses{" "} <br />
-          <span className="text-[#2D6E62] text-[32px]">
-            {`You’ll`} Find on Zonke
-          </span>
-        </h2>
-        <p className="text-[#3D3D3D] text-[20px]">
-          Zonke connects you with a wide range of merchants — from your favorite
-          local spots to essential services and emerging digital sellers.
-        </p>
+          <h2 className="text-[#A32C14] text-[32px]">
+            Built for {" "}
+            <span className="font-semibold text-[32px]">
+              Every Kind of Business
+            </span>
+          </h2>
         </div>
 
         <div className="h-0 relative">
-            <Image 
+          <Image
             src={pattern}
             alt="img"
             width={300}
             height={300}
-            className="relative md:left-20 md:bottom-23 pointer-events-none"
-            />
+            className="relative md:left-20 md:bottom-23"
+          />
         </div>
       </div>
 

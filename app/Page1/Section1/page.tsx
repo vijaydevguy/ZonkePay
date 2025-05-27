@@ -4,10 +4,42 @@ import React from "react";
 import Button from "../../../components/Button/page";
 
 import img1 from "../../../assets/section1_img.png";
+import leftbg from "../../../assets/page1_bgleft.png";
+import rightbg from "../../../assets/page1_bgright.png";
+import eclipse from "../../../assets/largeeelipse_bg.png";
 
 const page = () => {
   return (
-    <div className="md:h-[100vh] overflow-x-clip px-[5%] py-12 flex md:flex-row flex-col items-center jusity-center">
+    <div className="md:h-[100vh] overflow-x-clip px-[5%] py-12 flex md:flex-row flex-col items-center jusity-center
+    bg-gradient-t from-[#FF9B19] to-[#FFFEF3]
+    ">
+      <div className="absolute -top-70 -left-80 -z-20">
+        <Image 
+        src={leftbg}
+        alt="left"
+        height={500}
+        width={500}
+        className="pointer-events-none "
+        />
+      </div>
+      <div className="absolute -top-70 -right-80 -z-20">
+        <Image 
+        src={rightbg}
+        alt="left"
+        height={500}
+        width={500}
+        className="pointer-events-none "
+        />
+      </div>
+      <div className="absolute w-full -bottom-80 right-2 -z-20">
+        <Image 
+        src={eclipse}
+        alt="left"
+       width={4000}
+        className="pointer-events-none "
+        />
+      </div>
+
       {/* left */}
       <div className="flex flex-col gap-[56px]">
         <div className="flex flex-col ">
@@ -54,7 +86,9 @@ const page = () => {
 
       {/* right */}
       <div>
-        <Image src={img1} alt="img" />
+        <Image src={img1} alt="img" 
+        className="pointer-events-none"
+        />
       </div>
     </div>
   );

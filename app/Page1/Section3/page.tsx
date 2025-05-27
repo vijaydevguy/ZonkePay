@@ -59,7 +59,9 @@ const page = () => {
             key={card.id}
             className="flex flex-col  justify-center w-[380px] gap-4"
           >
-            <Image src={card.img} alt={card.title} />
+            <Image src={card.img} alt={card.title} 
+            className="pointer-events-none"
+            />
 
             <div className="flex flex-col w-full gap-1">
                 <h2 className="text-white text-[16px] font-semibold">{card.title}</h2>
