@@ -3,7 +3,7 @@ import React from "react";
 const page = () => {
   return (
     <div
-      className="flex flex-col gap-2 h-[300px]"
+      className="flex flex-col gap-2 lg:h-[600px] md:h-[400px] h-[300px]"
       style={{
         backgroundImage: `url('/page1_section5_bg2.png')`,
         backgroundSize: "100% 100%",

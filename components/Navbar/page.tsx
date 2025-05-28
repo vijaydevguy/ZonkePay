@@ -123,7 +123,8 @@ const Navbar = () => {
       {/* Overlay - Only shows when menu is open AND screen is mobile */}
       {isOpen && (
         <div
-          className="md:hidden fixed inset-0 bg-black bg-opacity-20 backdrop-blur-sm z-10"
+          className="md:hidden fixed inset-0 bg-black/80
+           bg-opacity-20 backdrop-blur-xs z-10"
           onClick={() => setIsOpen(false)}
         />
       )}

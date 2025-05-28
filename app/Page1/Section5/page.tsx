@@ -1,63 +1,210 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 const Cards = [
   {
     id: "1",
     title: "PCI DSS Compliant",
-    description:
-      "Your payment data is handled using globally recognized security standards.",
+    description: "Your payment data is handled using globally recognized security standards.",
   },
   {
     id: "2",
     title: "SSL Secured",
-    description:
-      "All transactions and personal information are protected with end-to-end encryption.",
+    description: "All transactions and personal information are protected with end-to-end encryption.",
   },
   {
     id: "3",
     title: "Verified Merchant Onboarding",
-    description:
-      "Every business listed on Zonke undergoes strict verification for authenticity and compliance.",
+    description: "Every business listed on Zonke undergoes strict verification for authenticity and compliance.",
   },
 ];
+
 const page = () => {
+  // Animation variants
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        when: "beforeChildren",
+      },
+    },
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
   return (
     <div className="overflow-x-clip px-[5%] py-12 overflow-hidden flex flex-col gap-6">
-      <div className="flex md:flex-row flex-col justify-between items-start p-6 rounded-[8px] bg-[#A32C14] md:gap-6 gap-4">
-        <h2 className="text-white text-[24px] font-semibold">
+      {/* Top red banner */}
+      <motion.div 
+        className="flex md:flex-row flex-col justify-between items-start p-6 rounded-[8px] bg-[#A32C14] md:gap-6 gap-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{margin: "-50px" }}
+        variants={container}
+      >
+        <motion.h2 
+          className="text-white text-[24px] font-semibold"
+          variants={fadeUp}
+        >
           Built on Trust. Backed by Security.
-        </h2>
-        <p className="text-white text-[20px]">
+        </motion.h2>
+        <motion.p 
+          className="text-white text-[20px]"
+          variants={fadeUp}
+        >
           Zonke is committed to providing a safe, secure, and reliable platform,
           for both consumers and businesses.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
-      <div className="flex flex-col gap-4">
-        <h2 className="text-[#0077B6] text-[20px] font-semibold">Key Trust Markers</h2>
+      {/* Key Trust Markers section */}
+      <motion.div 
+        className="flex flex-col gap-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{  margin: "-50px" }}
+        variants={container}
+      >
+        <motion.h2 
+          className="text-[#0077B6] text-[20px] font-semibold"
+          variants={fadeUp}
+        >
+          Key Trust Markers
+        </motion.h2>
 
-        <div className="flex flex-wrap flex-row gap-6">
+        <motion.div 
+          className="flex flex-wrap flex-row gap-6"
+          variants={container}
+        >
           {Cards.map((card) => (
-            <div key={card.id} 
-            className="md:w-[30%]"
+            <motion.div 
+              key={card.id} 
+              className="md:w-[30%]"
+              variants={fadeIn}
             >
-              <h3 className="font-semibold text-[#3D3D3D]">{card.title}</h3>
-              <p className="text-[14px] text-[#3D3D3D]">{card.description}</p>
-            </div>
+              <motion.h3 
+                className="font-semibold text-[#3D3D3D]"
+                variants={fadeUp}
+              >
+                {card.title}
+              </motion.h3>
+              <motion.p 
+                className="text-[14px] text-[#3D3D3D]"
+                variants={fadeUp}
+              >
+                {card.description}
+              </motion.p>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="flex flex-col gap-2">
-          <h2 className="text-[#A32C14] text-[32px] font-semibold">Our Partners</h2>
-          <div className="border border-[#A32C14] rounded-[8px] p-6 h-[300px]">
-
-          </div>
-      </div>
-
-      
+      {/* Our Partners section */}
+      <motion.div 
+        className="flex flex-col gap-2"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{  margin: "-50px" }}
+        variants={container}
+      >
+        <motion.h2 
+          className="text-[#A32C14] text-[32px] font-semibold"
+          variants={fadeUp}
+        >
+          Our Partners
+        </motion.h2>
+        <motion.div 
+          className="border border-[#A32C14] rounded-[8px] p-6 h-[300px]"
+          variants={fadeIn}
+        >
+          {/* Partner content would go here */}
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
 
 export default page;
+
+// import React from "react";
+
+// const Cards = [
+//   {
+//     id: "1",
+//     title: "PCI DSS Compliant",
+//     description:
+//       "Your payment data is handled using globally recognized security standards.",
+//   },
+//   {
+//     id: "2",
+//     title: "SSL Secured",
+//     description:
+//       "All transactions and personal information are protected with end-to-end encryption.",
+//   },
+//   {
+//     id: "3",
+//     title: "Verified Merchant Onboarding",
+//     description:
+//       "Every business listed on Zonke undergoes strict verification for authenticity and compliance.",
+//   },
+// ];
+// const page = () => {
+//   return (
+//     <div className="overflow-x-clip px-[5%] py-12 overflow-hidden flex flex-col gap-6">
+//       <div className="flex md:flex-row flex-col justify-between items-start p-6 rounded-[8px] bg-[#A32C14] md:gap-6 gap-4">
+//         <h2 className="text-white text-[24px] font-semibold">
+//           Built on Trust. Backed by Security.
+//         </h2>
+//         <p className="text-white text-[20px]">
+//           Zonke is committed to providing a safe, secure, and reliable platform,
+//           for both consumers and businesses.
+//         </p>
+//       </div>
+
+//       <div className="flex flex-col gap-4">
+//         <h2 className="text-[#0077B6] text-[20px] font-semibold">Key Trust Markers</h2>
+
+//         <div className="flex flex-wrap flex-row gap-6">
+//           {Cards.map((card) => (
+//             <div key={card.id} 
+//             className="md:w-[30%]"
+//             >
+//               <h3 className="font-semibold text-[#3D3D3D]">{card.title}</h3>
+//               <p className="text-[14px] text-[#3D3D3D]">{card.description}</p>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+
+//       <div className="flex flex-col gap-2">
+//           <h2 className="text-[#A32C14] text-[32px] font-semibold">Our Partners</h2>
+//           <div className="border border-[#A32C14] rounded-[8px] p-6 h-[300px]">
+
+//           </div>
+//       </div>
+
+      
+//     </div>
+//   );
+// };
+
+// export default page;
