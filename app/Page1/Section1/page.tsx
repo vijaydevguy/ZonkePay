@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 import Button from "../../../components/Button/page";
 
 import img1 from "../../../assets/section1_img.png";
-import leftbg from "../../../assets/page1_bgleft.png";
-import rightbg from "../../../assets/page1_bgright.png";
-import eclipse from "../../../assets/largeeelipse_bg.png";
+import leftbg from "../../../assets/page1_bgleft.webp";
+import rightbg from "../../../assets/page1_bgright.webp";
+import eclipse from "../../../assets/largeeelipse_bg.webp";
 
 const page = () => {
   // Animation variants

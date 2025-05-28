@@ -49,7 +49,7 @@ const page = () => {
   return (
     <motion.div
       style={{
-        backgroundImage: `url('/page2_section5_bg.png')`,
+        backgroundImage: `url('/page2_section5_bg.webp')`,
         backgroundSize: "100% 100%",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",

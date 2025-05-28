@@ -4,11 +4,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import img from "../../../assets/page2_section2_img.png";
-import img1 from "../../../assets/page2_seciton2_img1.png";
-import img2 from "../../../assets/page2_seciton2_img2.png";
-import img3 from "../../../assets/page2_seciton2_img3.png";
+import img1 from "../../../assets/page2_seciton2_img1.webp";
+import img2 from "../../../assets/page2_seciton2_img2.webp";
+import img3 from "../../../assets/page2_seciton2_img3.webp";
 import img4 from "../../../assets/page2_seciton2_img2-1.png";
-import img5 from "../../../assets/page2_seciton2_img5.png";
+import img5 from "../../../assets/page2_seciton2_img5.webp";
 
 const page = () => {
   const Cards = [

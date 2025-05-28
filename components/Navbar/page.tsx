@@ -40,7 +40,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="sticky top-0 absolute z-20 w-full bg-white ">
+      <nav className="sticky top-0  z-20 w-full bg-white ">
         <div className="px-[5%] py-6 flex items-center justify-between">
           {/* Logo & Left Links */}
           
@@ -54,7 +54,7 @@ const Navbar = () => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="hover:underline transition ease-in-out transition duration-300"
+                    className="hover:underline  ease-in-out transition duration-300"
                   >
                     {link.name}
                   </Link>
@@ -67,7 +67,7 @@ const Navbar = () => {
           <div className="hidden md:flex text-[#A32C14] text-base font-medium">
             <Link
               href={navLinks[2].href}
-              className="hover:underline transition duration-300 ease-in-out transition "
+              className="hover:underline  duration-300 ease-in-out transition "
             >
               {navLinks[2].name}
             </Link>

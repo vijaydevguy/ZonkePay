@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import img1 from "../../../assets/page2_section4_img1.png";
+import img1 from "../../../assets/page2_section4_img1.webp";
 import img2 from "../../../assets/page2_section4_img2.png";
 import img3 from "../../../assets/page2_section4_img3.png";
 import img4 from "../../../assets/page2_section4_img4.png";

@@ -116,7 +116,7 @@ const page = () => {
 
       <motion.div
         style={{
-          backgroundImage: `url('/page2_section3_bg1.png')`,
+          backgroundImage: `url('/page2_section3_bg1.webp')`,
           backgroundSize: "100% 100%",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
