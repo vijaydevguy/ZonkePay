@@ -7,7 +7,7 @@ import Logo from "../../assets/Logo.svg";
 
 const navLinks = [
   { name: "About Us", href: "#" },
-  { name: "Zonke for Business", href: "/Page2" },
+  { name: "Zonke for Business", href: "/Business" },
   { name: "Contact Us", href: "#" },
 ];
 

@@ -117,8 +117,9 @@ const page = () => {
               className="text-[16px] text-[#8B8A85]"
               variants={textItem}
             >
-              Zonke connects merchants and consumers through a secure,
-              wallet-first platform built for inclusive growth.
+              {/* Zonke connects merchants and consumers through a secure,
+              wallet-first platform built for inclusive growth. */}
+              The fastest way to create your wallet and start paying - all in just a few taps.
             </motion.p>
 
             <motion.div 
