@@ -20,17 +20,17 @@ const images = [
   {
     id: "2",
     img: img2,
-    title: "Pay instantly with your digital wallet",
+    title: "Earn cashback at partner stores",
   },
   {
     id: "3",
     img: img3,
-    title: "Pay instantly with your digital wallet",
+    title: "Discover nearby deals",
   },
   {
     id: "4",
     img: img4,
-    title: "Pay instantly with your digital wallet",
+    title: "Track your spending in one place",
   },
 ];
 

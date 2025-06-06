@@ -100,12 +100,12 @@ const page = () => {
       >
         <div>
           <motion.h2 
-            className="text-[#FC670F] text-[32px]"
+            className="text-[#FC670F] text-[32px] font-semibold"
             variants={fadeUp}
           >
             Businesses{" "} <br />
             <motion.span 
-              className="text-[#2D6E62] text-[32px]"
+              className="text-[#2D6E62] text-[32px] font-semibold"
               variants={fadeUp}
             >
               {`You’ll`} Find on Zonke

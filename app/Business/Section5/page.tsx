@@ -66,7 +66,9 @@ const page = () => {
           className="text-[32px] text-white"
           variants={fadeUp}
         >
-          Your Business, <motion.span variants={fadeUp}>Fully Digital</motion.span>
+          Your Business, <br /><motion.span 
+          className="font-semibold"
+          variants={fadeUp} >Fully Digital</motion.span>
         </motion.h2>
         <motion.p 
           className="text-[20px] text-white"
@@ -105,7 +107,7 @@ const page = () => {
               // whileHover={{ scale: 1.05 }}
             >
               <motion.p 
-                className='text-["#A93922"] rounded-full bg-white py-[12px] px-[14px] w-full'
+                className='text-[#A93922] rounded-full bg-white py-[12px] px-[14px] w-full'
                 variants={fadeUp}
               >
                 {card.text}

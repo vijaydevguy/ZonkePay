@@ -94,7 +94,7 @@ const page = () => {
         transition={{ staggerChildren: 0.1 }}
       >
         <motion.h2 
-          className="text-[20px]"
+          className="text-[20px] text-[#6C6868]"
           variants={fadeUp}
         >
           Benefits:

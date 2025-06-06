@@ -17,14 +17,14 @@ const Cards = [
   {
     id: "2",
     img: img2,
-    title: "Pre-Register for the App",
-    description: "Sign up today to be the first to explore Zonke when it launches.",
+    title: "Discover Local Businesses",
+    description: "Browse verified merchants, trending deals, and new storefronts near you.",
   },
   {
     id: "3",
     img: img3,
-    title: "Pre-Register for the App",
-    description: "Sign up today to be the first to explore Zonke when it launches.",
+    title: "Pay & Earn Rewards",
+    description: "Use your wallet to pay quickly — and enjoy cashback and offers in return.",
   },
 ];
 
