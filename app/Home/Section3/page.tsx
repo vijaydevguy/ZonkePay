@@ -63,9 +63,9 @@ const page = () => {
       className="px-[5%] pb-12 overflow-x-clip flex flex-col justify-center gap-6"
       style={{
         backgroundImage: `url('/section3_bg.webp')`,
-        backgroundSize: "100% 100%",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        
       }}
     >
       {/* Top section - unchanged structure */}

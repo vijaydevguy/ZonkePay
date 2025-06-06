@@ -43,7 +43,11 @@ const Footer = () => {
   return (
     <motion.div
       className="bg-cover bg-no-repeat bg-center text-white overflow-x-clip overflow-hidden"
-      style={{ backgroundImage: `url('/footer_bg.webp')` }}
+      style={{ backgroundImage: `url('/footer_bg.webp')`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+       }}
       initial="hidden"
       whileInView="visible"
       viewport={{ margin: "-50px" }}

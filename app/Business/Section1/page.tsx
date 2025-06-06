@@ -23,12 +23,12 @@ const page = () => {
       className='px-[5%] py-12 overflow-x-clip h-screen flex flex-col gap-6 justify-center'
       style={{
         backgroundImage: `url('/page2_bg1.webp')`,
-        backgroundSize: "100% 100%",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
       }}
     >
-      <div className='flex flex-col md:w-[40%]'>
+      <div className='flex flex-col lg:w-[40%]'>
         {/* First line - appears first */}
         <motion.h1 
           className='text-[40px] text-white font-semibold'
