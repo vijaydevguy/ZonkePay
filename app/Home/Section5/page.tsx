@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useCallback, useState } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Zonkey from "../../../assets/Logo.webp";
@@ -34,14 +34,13 @@ const companies = [
   { name: "Zonkey", logo: Zonkey, id: "4" },
 ];
 
-// Optimized infinite scroll hook
-const useInfiniteScroll = (speed = 1) => {
+// Custom hook for smooth infinite scroll
+const useInfiniteScroll = (speed = 2) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>(0);
-  const scrollPosRef = useRef(0);
-  const pausedRef = useRef(false);
-  const [isReady, setIsReady] = useState(false);
+  const animationRef = useRef<number | null>(null);
+  const pausedRef = useRef<boolean>(false);
+  const directionRef = useRef<number>(1); // 1 for right, -1 for left
 
   const animate = useCallback(() => {
     if (!scrollerRef.current || pausedRef.current) {
@@ -49,78 +48,48 @@ const useInfiniteScroll = (speed = 1) => {
       return;
     }
 
-    scrollPosRef.current += speed;
     const scroller = scrollerRef.current;
-    const contentWidth = scroller.scrollWidth / 3;
+    const container = containerRef.current;
+    if (!scroller || !container) return;
 
-    if (scrollPosRef.current < contentWidth * 2) {
-      scroller.scrollTo({
-        left: scrollPosRef.current,
-        behavior: 'auto'
-      });
+    const scrollWidth = scroller.scrollWidth;
+    const clientWidth = container.clientWidth;
+    const maxScroll = scrollWidth - clientWidth;
+    const currentScroll = scroller.scrollLeft;
+
+    // If we've scrolled all the way to the end, reset to start seamlessly
+    if (currentScroll >= maxScroll - 1) {
+      scroller.scrollLeft = 0;
+    } else if (currentScroll <= 0) {
+      scroller.scrollLeft = maxScroll - 1;
     } else {
-      scrollPosRef.current = contentWidth;
-      scroller.scrollTo({
-        left: scrollPosRef.current,
-        behavior: 'auto'
-      });
+      scroller.scrollLeft += speed * directionRef.current;
     }
 
     animationRef.current = requestAnimationFrame(animate);
   }, [speed]);
 
   useEffect(() => {
-    const scroller = scrollerRef.current;
-    if (!scroller) return;
-
-    const initScroll = () => {
-      const contentWidth = scroller.scrollWidth / 3;
-      scrollPosRef.current = contentWidth;
-      scroller.scrollLeft = contentWidth;
-      setIsReady(true);
-    };
-
-    const images = scroller.querySelectorAll('img');
-    if (images.length > 0) {
-      Promise.all(Array.from(images).map(img => 
-        img.complete ? Promise.resolve() : new Promise(resolve => {
-          img.onload = resolve;
-          img.onerror = resolve;
-        })
-      )).then(initScroll);
-    } else {
-      initScroll();
-    }
-
-    return () => {
-      setIsReady(false);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isReady) return;
-
     const container = containerRef.current;
-    if (!container) return;
+    const scroller = scrollerRef.current;
+    if (!container || !scroller) return;
+
+    // Duplicate the content for seamless looping
+    const content = scroller.innerHTML;
+    scroller.innerHTML = content + content + content;
+    scroller.scrollLeft = scroller.scrollWidth / 3;
 
     const handleMouseEnter = () => {
       pausedRef.current = true;
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
     };
 
     const handleMouseLeave = () => {
       pausedRef.current = false;
-      animationRef.current = requestAnimationFrame(animate);
     };
 
     animationRef.current = requestAnimationFrame(animate);
-
     container.addEventListener('mouseenter', handleMouseEnter);
     container.addEventListener('mouseleave', handleMouseLeave);
-    container.addEventListener('touchstart', handleMouseEnter);
-    container.addEventListener('touchend', handleMouseLeave);
 
     return () => {
       if (animationRef.current) {
@@ -128,16 +97,15 @@ const useInfiniteScroll = (speed = 1) => {
       }
       container.removeEventListener('mouseenter', handleMouseEnter);
       container.removeEventListener('mouseleave', handleMouseLeave);
-      container.removeEventListener('touchstart', handleMouseEnter);
-      container.removeEventListener('touchend', handleMouseLeave);
     };
-  }, [animate, isReady]);
+  }, [animate]);
 
   return { containerRef, scrollerRef };
 };
 
 const TrustPage = () => {
-  const { containerRef, scrollerRef } = useInfiniteScroll(1.2);
+  // Control speed here (higher number = faster)
+  const { containerRef, scrollerRef } = useInfiniteScroll(1);
 
   // Animation variants
   const container = {
@@ -243,15 +211,16 @@ const TrustPage = () => {
           Our Partners
         </motion.h2>
         <motion.div
-          className="p-6 h-[120px] overflow-hidden relative"
+          className="p-6 h-[100px] overflow-hidden relative"
           variants={fadeIn}
           ref={containerRef}
         >
           <div 
             ref={scrollerRef}
-            className="flex items-center h-full w-full overflow-hidden"
+            className="flex items-center h-full w-full overflow-hidden scroll-smooth"
+            style={{ scrollBehavior: 'smooth' }}
           >
-            <div className="flex items-center h-full gap-16 min-w-max">
+            <div className="flex items-center h-full gap-12">
               {[...companies, ...companies, ...companies].map((company, index) => (
                 <div 
                   key={`${company.id}-${index}`} 
@@ -260,22 +229,17 @@ const TrustPage = () => {
                   <Image
                     src={company.logo}
                     alt={company.name}
-                    width={160}
-                    height={80}
-                    className="object-contain h-[80px] w-auto max-w-[160px]"
+                    width={150}
+                    height={100}
+                    className="object-contain h-[100%] w-auto max-w-[150px]"
                     priority={index < 8}
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.onerror = null;
-                      target.src = '/default-logo.png';
-                    }}
                   />
                 </div>
               ))}
             </div>
           </div>
           
-          {/* Gradient overlays */}
+          {/* Gradient overlays to hide the edges */}
           <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
           <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
         </motion.div>
