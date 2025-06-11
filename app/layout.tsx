@@ -11,8 +11,8 @@ const poppins = Poppins({
 
 
 export const metadata: Metadata = {
-  title: "Zonkey Pay",
-  description: "Zonkey Pay",
+  title: "ZonkePay",
+  description: "ZonkePay",
 };
 
 export default function RootLayout({

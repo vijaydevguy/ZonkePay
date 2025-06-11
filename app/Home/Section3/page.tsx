@@ -103,7 +103,7 @@ const page = () => {
         {Cards.map((card) => (
           <motion.div
             key={card.id}
-            className="flex flex-col justify-center w-[380px] gap-4"
+            className="flex flex-col justify-center md:w-[380px] gap-4"
             variants={fadeIn}
           >
             <Image 
@@ -120,7 +120,7 @@ const page = () => {
                 {card.title}
               </motion.h2>
               <motion.p 
-                className="text-white text-[14px]"
+                className="text-white text-[14px] text-wrap "
                 variants={fadeUp}
               >
                 {card.description}

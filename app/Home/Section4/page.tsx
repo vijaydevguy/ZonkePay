@@ -103,12 +103,12 @@ const page = () => {
             className="text-[#FC670F] text-[32px] font-semibold"
             variants={fadeUp}
           >
-            Businesses{" "} <br />
+            Explore{" "} <br />
             <motion.span 
               className="text-[#2D6E62] text-[32px] font-semibold"
               variants={fadeUp}
             >
-              {`You’ll`} Find on Zonke
+              Categories on Zonke
             </motion.span>
           </motion.h2>
           <motion.p 
@@ -137,13 +137,49 @@ const page = () => {
 
       {/* Cards sections */}
       <motion.div 
-        className="flex flex-wrap gap-12"
+        className="flex-wrap gap-12 hidden md:flex"
         initial="hidden"
         whileInView="visible"
         viewport={{  margin: "-50px" }}
         variants={container}
       >
         {Cards.slice(0, 3).map((card) => (
+          <motion.div 
+        key={card.id} 
+        className="w-[40%] md:w-[20%] flex flex-col gap-4"
+        variants={fadeIn}
+          >
+        <motion.div variants={fadeUp}>
+          <Image 
+            src={card.img} 
+            alt={card.title}
+            className="pointer-events-none"
+          />
+        </motion.div>
+
+        <motion.div className="flex flex-col" variants={fadeUp}>
+          <h2 className="font-semibold">{card.title}</h2>
+          <p className="text-[14px]">{card.description}</p>
+          <motion.div 
+            className="h-[4px] rounded-full bg-[#FC670F] w-[40%] mt-2"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          />
+        </motion.div>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <motion.div 
+        className="hidden md:flex flex-wrap gap-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{  margin: "-50px" }}
+        variants={container}
+      >
+        {Cards.slice(3).map((card) => (
           <motion.div 
             key={card.id} 
             className="w-[40%] md:w-[20%] flex flex-col gap-4"
@@ -172,14 +208,15 @@ const page = () => {
         ))}
       </motion.div>
 
+      {/* mobile ui for cards */}
       <motion.div 
-        className="flex flex-wrap gap-12"
+        className="md:hidden flex flex-wrap gap-12"
         initial="hidden"
         whileInView="visible"
         viewport={{  margin: "-50px" }}
         variants={container}
       >
-        {Cards.slice(3).map((card) => (
+        {Cards.map((card) => (
           <motion.div 
             key={card.id} 
             className="w-[40%] md:w-[20%] flex flex-col gap-4"

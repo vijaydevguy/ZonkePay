@@ -6,7 +6,7 @@ const page = () => {
       className="flex flex-col gap-2 lg:h-[600px] md:h-[400px] h-[300px]"
       style={{
         backgroundImage: `url('/page1_section5_bg2.webp')`,
-        backgroundSize: "100% 100%",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
       }}

@@ -40,14 +40,33 @@ const Footer = () => {
     },
   };
 
+  const links =[
+    {
+      id: "1",
+      text: "About Zonke",
+      link: "#",
+    },
+    {
+      id: "2",
+      text: "Zonke for Business",
+      link: "/Business",
+    },
+    {
+      id: "3",
+      text: "Contact Us",
+      link: "/Contact",
+    },
+  ]
+
   return (
     <motion.div
       className="bg-cover bg-no-repeat bg-center text-white overflow-x-clip overflow-hidden"
-      style={{ backgroundImage: `url('/footer_bg.webp')`,
+      style={{
+        backgroundImage: `url('/footer_bg.webp')`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-       }}
+      }}
       initial="hidden"
       whileInView="visible"
       viewport={{ margin: "-50px" }}
@@ -55,37 +74,37 @@ const Footer = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Column (first, no delay) */}
-        <motion.div 
+        <motion.div
           custom={0} // 0 index for first column
           variants={columnVariants}
           className="space-y-4"
         >
-          <motion.h3 
+          <motion.h3
             className="text-[20px] font-semibold"
             variants={itemVariants}
           >
             Company
           </motion.h3>
           <ul className="space-y-2 text-[16px]">
-            {["About Zonke", "Zonke for Business", "Contact Us"].map((item, index) => (
-              <motion.li 
-                key={index}
-                variants={itemVariants}
-                custom={index}
-              >
-                <a className="hover:border-b-1" href="#">{item}</a>
-              </motion.li>
-            ))}
+            {links.map(
+              (item) => (
+                <motion.li key={item.id} variants={itemVariants} custom={item.id}>
+                  <a className="hover:border-b-1" href={item.link}>
+                    {item.text}
+                  </a>
+                </motion.li>
+              )
+            )}
           </ul>
         </motion.div>
 
         {/* Middle Column (0.2s delay) */}
-        <motion.div 
+        <motion.div
           custom={1} // 1 index for second column
           variants={columnVariants}
           className="space-y-4"
         >
-          <motion.h3 
+          <motion.h3
             className="text-[20px] font-semibold"
             variants={itemVariants}
           >
@@ -95,60 +114,57 @@ const Footer = () => {
             {[
               "Terms & Conditions",
               "Privacy Policy",
-              "POPIA Compliance (South Africa-specific)",
-              "AML & Fraud Prevention Policy"
+              "POPIA Compliance",
+              "AML & Fraud Prevention Policy",
             ].map((item, index) => (
-              <motion.li 
-                key={index}
-                variants={itemVariants}
-                custom={index}
-              >
-                <a className="hover:border-b-1" href="#">{item}</a>
+              <motion.li key={index} variants={itemVariants} custom={index}>
+                <a className="hover:border-b-1" href="#">
+                  {item}
+                </a>
               </motion.li>
             ))}
           </ul>
         </motion.div>
 
         {/* Right Column (0.4s delay) */}
-        <motion.div 
+        <motion.div
           custom={2} // 2 index for third column
           variants={columnVariants}
           className="flex flex-col justify-between items-start md:items-end text-right space-y-4"
         >
-          <div>
-            <motion.h2 
+          {/* <div>
+            <motion.h2
               className="text-[40px] font-semibold"
               variants={itemVariants}
             >
               Join Zonke
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="text-[20px] text-left md:text-right"
               variants={itemVariants}
             >
               Join the Waitlist
             </motion.p>
-          </div>
-          <motion.div 
-            className="text-[20px]"
-            variants={itemVariants}
-          >
-            <p>Email: zonkeyhelp@gmai.com</p>
-            <p className="md:text-left">Phone: +27 12345 12345</p>
+          </div> */}
+          <motion.div className="text-[20px]" variants={itemVariants}>
+            <p>Email: zonkehelp@gmail.com</p>
+            <p className="text-left">Phone: +27 12345 12345</p>
           </motion.div>
         </motion.div>
       </div>
 
       {/* Bottom Bar (0.6s delay) */}
-      <motion.div 
+      <motion.div
         custom={3} // 3 index for bottom bar
         variants={columnVariants}
         className="border-t border-white/30 py-4 px-6 text-[12px] flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto"
       >
         <motion.p variants={itemVariants}>
-          © 2025 Zonke Technologies (Pty) Ltd. All rights reserved.
+          © 2025 Universal Equity Ventures Inc. All rights reserved.
+          
         </motion.p>
         <motion.p variants={itemVariants}>
+          
           Zonke is a registered trademark in South Africa.
         </motion.p>
       </motion.div>
@@ -157,7 +173,6 @@ const Footer = () => {
 };
 
 export default Footer;
-
 
 // import React from "react";
 

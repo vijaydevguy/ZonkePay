@@ -124,7 +124,7 @@ const page = () => {
 
       {/* bottom - first row */}
       <motion.div 
-        className="flex flex-wrap gap-12"
+        className="hidden md:flex flex-wrap gap-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ margin: "-50px" }}
@@ -165,13 +165,54 @@ const page = () => {
 
       {/* bottom - second row */}
       <motion.div 
-        className="flex flex-wrap gap-12"
+        className="hidden md:flex flex-wrap gap-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ margin: "-50px" }}
         transition={{ staggerChildren: 0.1 }}
       >
         {Cards.slice(3).map((card) => (
+          <motion.div 
+            key={card.id} 
+            className="w-[40%] md:w-[20%] flex flex-col gap-4"
+            variants={fadeIn}
+          >
+            <Image 
+              src={card.img} 
+              alt={card.title} 
+              className="pointer-events-none"
+            />
+            <motion.div className="flex flex-col">
+              <motion.h2 
+                className="font-semibold"
+                variants={fadeUp}
+              >
+                {card.title}
+              </motion.h2>
+              <motion.p 
+                className="text-[14px]"
+                variants={fadeUp}
+              >
+                {card.description}
+              </motion.p>
+              <motion.div 
+                className="h-[4px] rounded-full bg-[#FC670F] w-[40%] mt-2"
+                variants={scaleX}
+              />
+            </motion.div>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* mobile cards */}
+      <motion.div 
+        className="md:hidden flex flex-wrap gap-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ margin: "-50px" }}
+        transition={{ staggerChildren: 0.1 }}
+      >
+        {Cards.map((card) => (
           <motion.div 
             key={card.id} 
             className="w-[40%] md:w-[20%] flex flex-col gap-4"

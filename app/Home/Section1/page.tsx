@@ -6,10 +6,12 @@ import { motion } from "framer-motion";
 
 import Button from "../../../components/Button/page";
 
+
 import img1 from "../../../assets/section1_img.png";
 import leftbg from "../../../assets/page1_bgleft.webp";
 import rightbg from "../../../assets/page1_bgright.webp";
 import eclipse from "../../../assets/largeeelipse_bg.webp";
+// import Link from "next/link";
 
 const page = () => {
   // Animation variants
@@ -90,7 +92,7 @@ const page = () => {
       <div className="flex md:flex-row flex-col items-center justify-center overflow-hidden">
         {/* left - animated text content */}
         <motion.div 
-          className="flex flex-col gap-[56px]"
+          className="flex flex-col gap-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ margin: "-100px" }}
@@ -98,13 +100,13 @@ const page = () => {
         >
           <motion.div className="flex flex-col" variants={container}>
             <motion.h2 
-              className="text-[40px] text-[#A32C14]"
+              className="text-[40px] text-[#A32C14] leading-[48px]"
               variants={textItem}
             >
               Powering South {`Africa's`} Digital Economy
             </motion.h2>
             <motion.p 
-              className="text-[20px] text-[#8B8A85]"
+              className="text-[20px] text-[#8B8A85] mt-2"
               variants={textItem}
             >
               Driving local business visibility, rewarding everyday purchases,
@@ -126,17 +128,23 @@ const page = () => {
               className="flex md:flex-row flex-col gap-6"
               variants={textItem}
             >
+              {/* <Link
+              href={"/Waitlist"}
+              >
+                click
+              </Link> */}
+
               <Button
-                text="Are you a consumer? Join the waitlist"
-                link="#"
-                className="w-full md:w-auto"
+              text="Are you a consumer? Join the waitlist"
+              link="/Waitlist"
+              className="w-full md:w-auto"
               />
-              <Button
-                text="Register Your Business"
-                link="#"
-                secondary
-                className="w-full md:w-auto"
-              />
+              {/* <Button
+              text="Register Your Business"
+              link="#"
+              secondary
+              className="w-full md:w-auto"
+              /> */}
             </motion.div>
           </motion.div>
         </motion.div>

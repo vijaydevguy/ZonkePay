@@ -6,6 +6,7 @@ import Section4 from "./Section4/page";
 import Section5 from "./Section5/page";
 import Section6 from "./Section6/page";
 import Footer from "../../components/Footer/page";
+// import Waitlist from "../../components/Waitlist/page";
 
 const page = () => {
   return (
@@ -16,6 +17,7 @@ const page = () => {
         <Section4 />
         <Section5 />
         <Section6 />
+        {/* <Waitlist /> */}
         <Footer />
     </>
   )

@@ -7,6 +7,7 @@ import Section3 from "../Business/Section3/page";
 import Section4 from "../Business/Section4/page";
 import Section5 from "../Business/Section5/page";
 import Section6 from "../Business/Section6/page";
+import Section7 from "../Business/Section7/page";
 import Footer from "../../components/Footer/page";
 
 const page = () => {
@@ -18,6 +19,7 @@ const page = () => {
         <Section3 />
         <Section4 />
         <Section5 />
+        <Section7 />
         <Section6 />
         <Footer />
     </>

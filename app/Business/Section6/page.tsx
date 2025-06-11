@@ -5,7 +5,7 @@ const page = () => {
     <div
     style={{
         backgroundImage: `url('/page2_section6_bg.webp')`,
-        backgroundSize: "100% 100%",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
       }}
