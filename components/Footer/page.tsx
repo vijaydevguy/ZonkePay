@@ -40,10 +40,10 @@ const Footer = () => {
     },
   };
 
-  const links =[
+  const links = [
     {
       id: "1",
-      text: "About Zonke",
+      text: "Pre Register",
       link: "#",
     },
     {
@@ -56,7 +56,7 @@ const Footer = () => {
       text: "Contact Us",
       link: "/Contact",
     },
-  ]
+  ];
 
   return (
     <motion.div
@@ -86,15 +86,13 @@ const Footer = () => {
             Company
           </motion.h3>
           <ul className="space-y-2 text-[16px]">
-            {links.map(
-              (item) => (
-                <motion.li key={item.id} variants={itemVariants} custom={item.id}>
-                  <a className="hover:border-b-1" href={item.link}>
-                    {item.text}
-                  </a>
-                </motion.li>
-              )
-            )}
+            {links.map((item) => (
+              <motion.li key={item.id} variants={itemVariants} custom={item.id}>
+                <a className="hover:border-b-1" href={item.link}>
+                  {item.text}
+                </a>
+              </motion.li>
+            ))}
           </ul>
         </motion.div>
 
@@ -157,16 +155,14 @@ const Footer = () => {
       <motion.div
         custom={3} // 3 index for bottom bar
         variants={columnVariants}
-        className="border-t border-white/30 py-4 px-6 text-[12px] flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto"
+        className="border-t border-white/30 py-4 px-6 text-[12px] flex flex-col md:flex-row justify-center items-center max-w-7xl mx-auto"
       >
         <motion.p variants={itemVariants}>
-          © 2025 Universal Equity Ventures Inc. All rights reserved.
-          
+          Copyright © 2025 Universal Equity Ventures Inc. All rights reserved.
         </motion.p>
-        <motion.p variants={itemVariants}>
-          
+        {/* <motion.p variants={itemVariants}>
           Zonke is a registered trademark in South Africa.
-        </motion.p>
+        </motion.p> */}
       </motion.div>
     </motion.div>
   );
