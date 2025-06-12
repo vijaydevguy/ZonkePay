@@ -10,6 +10,8 @@ import emailjs from "@emailjs/browser";
 import flag from "../../assets/SAflag.png";
 import pattern from "../../assets/contact_pattern.png";
 
+import Button from "../../components/Button/page";
+
 type ContactFormData = {
   firstName: string;
   lastName: string;
@@ -197,267 +199,276 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 px-[5%] py-12 overflow-x-clip md:justify-center">
-      <div className="fixed left-0 bottom-0 z-0 w-[180px] md:w-[300px] pointer-events-none select-none">
-        <Image src={pattern} alt="pattern" className="w-full h-auto" />
+    <>
+      <div className="flex px-[5%] pt-6">
+        <Button text="back" secondary link="/" className="w-fit md:w-auto" />
       </div>
-
-      {/* left */}
-      <div className="md:w-1/2">
-        <h2 className="text-[#A93922] md:text-[32px] text-[24px] font-bold mb-4">
-          Contact Us
-        </h2>
-
-        <div className="mb-8">
-          <h2 className="text-[20px] font-semibold mb-2">
-            Have a question or need support?
-          </h2>
-          <p className="text-[20px]">
-            Our team is here to assist you. Simply fill out the form or contact
-            us directly.
-          </p>
+      <div className="flex flex-col md:flex-row gap-6 px-[5%] py-12 overflow-x-clip md:justify-center">
+        <div className="fixed left-0 bottom-0 z-0 w-[180px] md:w-[300px] pointer-events-none select-none">
+          <Image src={pattern} alt="pattern" className="w-full h-auto" />
         </div>
 
-        <div className="flex flex-col justify-center gap-4">
-          <h2 className="flex flex-row gap-2 items-center text-[20px]">
-            <span>
-              <Image
-                src={mail}
-                alt="mail icon"
-                width={20}
-                height={20}
-                className="w-[24px] h-[24px]"
-              />
-            </span>
-            support@zonkepay.com
+        {/* left */}
+        <div className="md:w-1/2">
+          <h2 className="text-[#A93922] md:text-[32px] text-[24px] font-bold mb-4">
+            Contact Us
           </h2>
-          <h2 className="flex flex-row gap-2 items-center text-[20px]">
-            <span>
-              <Image
-                src={phone}
-                alt="phone icon"
-                width={20}
-                height={20}
-                className="w-[24px] h-[24px]"
-              />
-            </span>
-            +27 [Your Number]
-          </h2>
-          <h2 className="flex flex-row gap-2 items-center text-[20px]">
-            <span>
-              <Image
-                src={location}
-                alt="location icon"
-                width={20}
-                height={20}
-                className="w-[24px] h-[24px]"
-              />
-            </span>
-            South Africa
-          </h2>
-        </div>
-      </div>
 
-      {/* right */}
-      <div className="md:w-1/2">
-        {isSubmitted ? (
-          <div className="text-center py-8">
-            <h3 className="text-2xl font-semibold text-[#A93922] mb-2">
-              Thank You!
-            </h3>
-            <p className="text-lg">
-              Your message has been sent successfully. {`We'll`} get back to you
-              soon.
+          <div className="mb-8">
+            <h2 className="text-[20px] font-semibold mb-2">
+              Have a question or need support?
+            </h2>
+            <p className="text-[20px]">
+              Our team is here to assist you. Simply fill out the form or
+              contact us directly.
             </p>
           </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {errors.form && (
-              <div className="p-2 bg-red-100 text-red-700 rounded-md text-sm">
-                {errors.form}
-              </div>
-            )}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="flex flex-col justify-center gap-4">
+            <h2 className="flex flex-row gap-2 items-center text-[20px]">
+              <span>
+                <Image
+                  src={mail}
+                  alt="mail icon"
+                  width={20}
+                  height={20}
+                  className="w-[24px] h-[24px]"
+                />
+              </span>
+              support@zonkepay.com
+            </h2>
+            <h2 className="flex flex-row gap-2 items-center text-[20px]">
+              <span>
+                <Image
+                  src={phone}
+                  alt="phone icon"
+                  width={20}
+                  height={20}
+                  className="w-[24px] h-[24px]"
+                />
+              </span>
+              +27 [Your Number]
+            </h2>
+            <h2 className="flex flex-row gap-2 items-center text-[20px]">
+              <span>
+                <Image
+                  src={location}
+                  alt="location icon"
+                  width={20}
+                  height={20}
+                  className="w-[24px] h-[24px]"
+                />
+              </span>
+              South Africa
+            </h2>
+          </div>
+        </div>
+
+        {/* right */}
+        <div className="md:w-1/2">
+          {isSubmitted ? (
+            <div className="text-center py-8">
+              <h3 className="text-2xl font-semibold text-[#A93922] mb-2">
+                Thank You!
+              </h3>
+              <p className="text-lg">
+                Your message has been sent successfully. {`We'll`} get back to
+                you soon.
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {errors.form && (
+                <div className="p-2 bg-red-100 text-red-700 rounded-md text-sm">
+                  {errors.form}
+                </div>
+              )}
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    htmlFor="firstName"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    First Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    className={`mt-1 block w-full px-3 py-2 border ${
+                      errors.firstName ? "border-red-500" : "border-gray-300"
+                    } rounded-md shadow-sm focus:outline-none focus:ring-[#A93922] focus:border-[#A93922] bg-white`}
+                  />
+                  {errors.firstName && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {errors.firstName}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label
+                    htmlFor="lastName"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Last Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    className={`mt-1 block w-full px-3 py-2 border ${
+                      errors.lastName ? "border-red-500" : "border-gray-300"
+                    } rounded-md shadow-sm focus:outline-none focus:ring-[#A93922] focus:border-[#A93922] bg-white`}
+                  />
+                  {errors.lastName && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {errors.lastName}
+                    </p>
+                  )}
+                </div>
+              </div>
+
               <div>
                 <label
-                  htmlFor="firstName"
+                  htmlFor="email"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  First Name <span className="text-red-500">*</span>
+                  Email <span className="text-red-500">*</span>
                 </label>
                 <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
+                  type="email"
+                  id="email"
+                  name="email"
                   required
-                  value={formData.firstName}
+                  value={formData.email}
                   onChange={handleChange}
                   className={`mt-1 block w-full px-3 py-2 border ${
-                    errors.firstName ? "border-red-500" : "border-gray-300"
-                  } rounded-md shadow-sm focus:outline-none focus:ring-[#A93922] focus:border-[#A93922] bg-white`}
+                    errors.email ? "border-red-500" : "border-gray-300"
+                  } rounded-md shadow-sm bg-white focus:outline-none focus:ring-[#A93922] focus:border-[#A93922]`}
                 />
-                {errors.firstName && (
+                {errors.email && (
+                  <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                )}
+              </div>
+
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Phone Number <span className="text-red-500">*</span>
+                </label>
+                <div className="flex flex-row gap-2 items-center">
+                  <span>
+                    <Image src={flag} alt="SA Flag" width={30} height={20} />
+                  </span>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    pattern="[0-9]{10}"
+                    inputMode="numeric"
+                    maxLength={10}
+                    placeholder="0123456789"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className={`mt-1 block w-full px-3 py-2 bg-white border ${
+                      errors.phone ? "border-red-500" : "border-gray-300"
+                    } rounded-md shadow-sm focus:outline-none focus:ring-[#A93922] focus:border-[#A93922]`}
+                  />
+                </div>
+                {errors.phone && (
+                  <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
+                )}
+              </div>
+
+              <div>
+                <label
+                  htmlFor="identity"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  How do you identify yourself?{" "}
+                  <span className="text-red-500">*</span>
+                </label>
+                <select
+                  id="identity"
+                  name="identity"
+                  required
+                  value={formData.identity}
+                  onChange={handleChange}
+                  className={`mt-1 block w-full px-3 bg-white py-2 border ${
+                    errors.identity ? "border-red-500" : "border-gray-300"
+                  } rounded-md shadow-sm focus:outline-none focus:ring-[#A93922] focus:border-[#A93922]`}
+                >
+                  <option value="">Select your role</option>
+                  <option value="Merchant">Merchant</option>
+                  <option value="Seller">Seller</option>
+                  <option value="Consumer">Consumer</option>
+                  <option value="Partner">Partner</option>
+                  <option value="Other">Other</option>
+                </select>
+                {errors.identity && (
+                  <p className="mt-1 text-sm text-red-600">{errors.identity}</p>
+                )}
+              </div>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Message <span className="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                  className={`mt-1 block w-full bg-white px-3 py-2 border ${
+                    errors.message ? "border-red-500" : "border-gray-300"
+                  } rounded-md shadow-sm focus:outline-none focus:ring-[#A93922] focus:border-[#A93922] max-h-[200px]`}
+                />
+                {errors.message && (
+                  <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+                )}
+              </div>
+
+              <div className="flex flex-col items-center">
+                <ReCAPTCHA
+                  sitekey={RECAPTCHA_SITE_KEY}
+                  onChange={handleRecaptchaChange}
+                />
+                {errors.recaptcha && (
                   <p className="mt-1 text-sm text-red-600">
-                    {errors.firstName}
+                    {errors.recaptcha}
                   </p>
                 )}
               </div>
-              <div>
-                <label
-                  htmlFor="lastName"
-                  className="block text-sm font-medium text-gray-700"
+
+              <div className="flex justify-end">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="px-6 py-2 text-sm font-medium text-white bg-[#FA5117] rounded-md hover:bg-[#fa3517] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Last Name <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  required
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  className={`mt-1 block w-full px-3 py-2 border ${
-                    errors.lastName ? "border-red-500" : "border-gray-300"
-                  } rounded-md shadow-sm focus:outline-none focus:ring-[#A93922] focus:border-[#A93922] bg-white`}
-                />
-                {errors.lastName && (
-                  <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>
-                )}
+                  {isSubmitting ? "Sending..." : "Submit"}
+                </button>
               </div>
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Email <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                className={`mt-1 block w-full px-3 py-2 border ${
-                  errors.email ? "border-red-500" : "border-gray-300"
-                } rounded-md shadow-sm bg-white focus:outline-none focus:ring-[#A93922] focus:border-[#A93922]`}
-              />
-              {errors.email && (
-                <p className="mt-1 text-sm text-red-600">{errors.email}</p>
-              )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="phone"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Phone Number <span className="text-red-500">*</span>
-              </label>
-              <div className="flex flex-row gap-2 items-center">
-                <span>
-                  <Image src={flag} alt="SA Flag" width={30} height={20} />
-                </span>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  pattern="[0-9]{10}"
-                  inputMode="numeric"
-                  maxLength={10}
-                  placeholder="0123456789"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className={`mt-1 block w-full px-3 py-2 bg-white border ${
-                    errors.phone ? "border-red-500" : "border-gray-300"
-                  } rounded-md shadow-sm focus:outline-none focus:ring-[#A93922] focus:border-[#A93922]`}
-                />
-              </div>
-              {errors.phone && (
-                <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
-              )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="identity"
-                className="block text-sm font-medium text-gray-700"
-              >
-                How do you identify yourself?{" "}
-                <span className="text-red-500">*</span>
-              </label>
-              <select
-                id="identity"
-                name="identity"
-                required
-                value={formData.identity}
-                onChange={handleChange}
-                className={`mt-1 block w-full px-3 bg-white py-2 border ${
-                  errors.identity ? "border-red-500" : "border-gray-300"
-                } rounded-md shadow-sm focus:outline-none focus:ring-[#A93922] focus:border-[#A93922]`}
-              >
-                <option value="">Select your role</option>
-                <option value="Merchant">Merchant</option>
-                <option value="Seller">Seller</option>
-                <option value="Consumer">Consumer</option>
-                <option value="Partner">Partner</option>
-                <option value="Other">Other</option>
-              </select>
-              {errors.identity && (
-                <p className="mt-1 text-sm text-red-600">{errors.identity}</p>
-              )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Message <span className="text-red-500">*</span>
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                required
-                value={formData.message}
-                onChange={handleChange}
-                className={`mt-1 block w-full bg-white px-3 py-2 border ${
-                  errors.message ? "border-red-500" : "border-gray-300"
-                } rounded-md shadow-sm focus:outline-none focus:ring-[#A93922] focus:border-[#A93922] max-h-[200px]`}
-              />
-              {errors.message && (
-                <p className="mt-1 text-sm text-red-600">{errors.message}</p>
-              )}
-            </div>
-
-            <div className="flex flex-col items-center">
-              <ReCAPTCHA
-                sitekey={RECAPTCHA_SITE_KEY}
-                onChange={handleRecaptchaChange}
-              />
-              {errors.recaptcha && (
-                <p className="mt-1 text-sm text-red-600">{errors.recaptcha}</p>
-              )}
-            </div>
-
-            <div className="flex justify-end">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="px-6 py-2 text-sm font-medium text-white bg-[#FA5117] rounded-md hover:bg-[#fa3517] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? "Sending..." : "Submit"}
-              </button>
-            </div>
-          </form>
-        )}
+            </form>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -780,4 +791,3 @@ export default ContactPage;
 // };
 
 // export default ContactPage;
-

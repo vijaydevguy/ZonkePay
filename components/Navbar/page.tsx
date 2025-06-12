@@ -49,7 +49,7 @@ const Navbar = () => {
             </Link>
             {/* Desktop Left Links */}
             <div className="hidden md:flex space-x-8 text-[#A32C14] text-base font-medium">
-              {navLinks.map((link) => (
+              {/* {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -57,7 +57,12 @@ const Navbar = () => {
                 >
                   {link.name}
                 </Link>
-              ))}
+              ))} */}
+              <Link 
+              href={"/Business"}
+              >
+                Zonke for Business
+              </Link>
             </div>
           {/* </div> */}
 
