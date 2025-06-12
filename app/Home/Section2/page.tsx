@@ -121,7 +121,7 @@ const page = () => {
       <div className="flex md:flex-row flex-col justify-between items-center overflow-hidden">
         {/* left - image grid */}
         <motion.div
-          className="flex flex-col md:flex-row md:flex-wrap items-start justify-start gap-12 lg:w-[40%] md:w-[60%] w-full md:mb-20"
+          className="flex flex-col md:flex-row md:flex-wrap items-start justify-start gap-12 lg:w-[40%] md:w-[60%] w-full lg:mb-20"
           initial="hidden"
           whileInView="visible"
           viewport={{ margin: "-50px" }}
@@ -150,7 +150,7 @@ const page = () => {
 
         {/* right - globe image */}
         <motion.div
-          className="lg:w-[50%] md:w-[30%] w-full md:h-[400px] h-full flex items-center justify-center relative overflow-y-clip"
+          className="lg:w-[50%] md:w-[70%] w-full md:h-[400px] md:h-full h-[250px] flex items-center justify-center relative overflow-y-clip relative"
           initial="hidden"
           whileInView="visible"
           viewport={{ margin: "-50px" }}
@@ -159,7 +159,7 @@ const page = () => {
           <Image
             src={globe}
             alt="globe"
-            className="w-[800px] relative lg:top-48 pointer-events-none"
+            className="w-[800px] relative lg:top-48 md:top-32 top-28 pointer-events-none"
           />
         </motion.div>
       </div>
