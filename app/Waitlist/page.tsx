@@ -18,7 +18,8 @@ import flag from "../../assets/SAflag.png";
 
 import Button from "../../components/Button/page";
 
-const RECAPTCHA_SITE_KEY = "6Lf_SVsrAAAAAJE-1WSvMXGbSdXukogLED_tmSzb";
+// const RECAPTCHA_SITE_KEY = "6Lf_SVsrAAAAAJE-1WSvMXGbSdXukogLED_tmSzb";
+const RECAPTCHA_SITE_KEY = "6LdtmMMqAAAAAO0AAfhBlfqofdA-z8CJLNDJUMbM";
 
 type FormErrors = {
   firstName?: string;

@@ -32,7 +32,8 @@ type FormErrors = {
   form?: string;
 };
 
-const RECAPTCHA_SITE_KEY = "6Lf_SVsrAAAAAJE-1WSvMXGbSdXukogLED_tmSzb";
+// const RECAPTCHA_SITE_KEY = "6Lf_SVsrAAAAAJE-1WSvMXGbSdXukogLED_tmSzb";
+const RECAPTCHA_SITE_KEY = "6LdtmMMqAAAAAO0AAfhBlfqofdA-z8CJLNDJUMbM";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState<ContactFormData>({
