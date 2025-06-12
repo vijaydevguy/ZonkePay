@@ -145,7 +145,7 @@ const Footer = () => {
             </motion.p>
           </div> */}
           <motion.div className="text-[20px]" variants={itemVariants}>
-            <p>Email: zonkehelp@gmail.com</p>
+            <p>Email: support@zonkepay.com</p>
             <p className="text-left">Phone: +27 12345 12345</p>
           </motion.div>
         </motion.div>
