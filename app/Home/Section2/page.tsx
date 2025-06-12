@@ -84,7 +84,7 @@ const page = () => {
   };
 
   return (
-    <div className="px-[5%] overflow-x-clip pt-12 bg-[rgb(255,254,243)] flex flex-col items-center justify-center gap-6">
+    <div className="px-[5%] overflow-x-clip pt-20 bg-[rgb(255,254,243)] flex flex-col items-center justify-center gap-6">
       {/* top */}
       <motion.div
         className="flex md:flex-row flex-col gap-6 items-center "
@@ -121,7 +121,7 @@ const page = () => {
       <div className="flex md:flex-row flex-col justify-between items-center overflow-hidden">
         {/* left - image grid */}
         <motion.div
-          className="flex flex-col md:flex-row md:flex-wrap items-start justify-start gap-12 lg:w-[40%] md:w-[60%] w-full"
+          className="flex flex-col md:flex-row md:flex-wrap items-start justify-start gap-12 lg:w-[40%] md:w-[60%] w-full md:mb-20"
           initial="hidden"
           whileInView="visible"
           viewport={{ margin: "-50px" }}

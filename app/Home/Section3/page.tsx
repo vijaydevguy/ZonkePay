@@ -60,7 +60,7 @@ const page = () => {
 
   return (
     <div
-      className="px-[5%] pb-12 overflow-x-clip flex flex-col justify-center gap-6"
+      className="px-[5%] py-20 overflow-x-clip flex flex-col justify-center gap-6"
       style={{
         backgroundImage: `url('/section3_bg.webp')`,
         backgroundSize: "cover",

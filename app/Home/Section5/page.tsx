@@ -137,7 +137,7 @@ const TrustPage = () => {
   };
 
   return (
-    <div className="overflow-x-clip px-[5%] py-12 overflow-hidden flex flex-col gap-6">
+    <div className="overflow-x-clip px-[5%] pb-20 overflow-hidden flex flex-col gap-6">
       {/* Top red banner */}
       <motion.div
         className="flex md:flex-row flex-col justify-between items-start p-6 rounded-[8px] bg-[#A32C14] md:gap-6 gap-4"
