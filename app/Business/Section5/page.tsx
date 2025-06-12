@@ -54,7 +54,7 @@ const page = () => {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
       }}
-      className="px-[5%] py-12 overflow-x-clip flex flex-col gap-6"
+      className="px-[5%] py-20 overflow-x-clip flex flex-col gap-6"
       initial="hidden"
       whileInView="visible"
       viewport={{ margin: "-50px" }}

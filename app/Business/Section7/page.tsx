@@ -56,7 +56,7 @@ const TechStack = () => {
   };
 
   return (
-    <div className="flex md:flex-row flex-col px-[5%] py-12 overflow-x-hidden bg-[#FC670F] items-center justify-center gap-6">
+    <div className="flex md:flex-row flex-col px-[5%] py-20 overflow-x-hidden bg-[#FC670F] items-center justify-center gap-6">
       {/* left */}
       <motion.div 
         className="flex flex-col gap-2"

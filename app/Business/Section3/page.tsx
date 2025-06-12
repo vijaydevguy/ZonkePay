@@ -45,7 +45,7 @@ const page = () => {
 
   return (
     <>
-      <div className="px-[5%] py-12 overflow-x-clip overflow-hidden flex flex-col gap-6 bg-[#2D6E62]">
+      <div className="px-[5%] py-20 overflow-x-clip overflow-hidden flex flex-col gap-6 bg-[#2D6E62]">
         {/* top */}
         <motion.div
           initial="hidden"

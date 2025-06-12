@@ -58,7 +58,7 @@ const page = () => {
   };
 
   return (
-    <div className="px-[5%] py-12 overflow-x-clip overflow-hidden flex flex-col gap-6">
+    <div className="px-[5%] py-20 overflow-x-clip overflow-hidden flex flex-col gap-6">
       {/* top section */}
       <motion.div 
         className="flex md:flex-row flex-col items-center gap-6"
