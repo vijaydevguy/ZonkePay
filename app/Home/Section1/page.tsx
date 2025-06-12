@@ -105,13 +105,13 @@ const page = () => {
             >
               Powering South {`Africa's`} Digital Economy
             </motion.h2>
-            {/* <motion.p 
+            <motion.p 
               className="text-[20px] text-[#8B8A85] mt-2"
               variants={textItem}
             >
               Driving local business visibility, rewarding everyday purchases,
               and simplifying payments
-            </motion.p> */}
+            </motion.p>
           </motion.div>
 
           <motion.div className="flex flex-col gap-[24px]" variants={container}>
