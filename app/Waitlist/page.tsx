@@ -20,8 +20,11 @@ import flag from "../../assets/SAflag.png";
 
 import Navbar from "../../components/Navbar/page"
 
-const RECAPTCHA_SITE_KEY = "6Lf_SVsrAAAAAJE-1WSvMXGbSdXukogLED_tmSzb";
+// const RECAPTCHA_SITE_KEY = "6Lf_SVsrAAAAAJE-1WSvMXGbSdXukogLED_tmSzb";
 // const RECAPTCHA_SITE_KEY = "6LdtmMMqAAAAAO0AAfhBlfqofdA-z8CJLNDJUMbM";
+
+//new vercel key
+const RECAPTCHA_SITE_KEY = "6LfDQ2IrAAAAAMTUHv4015vTVBMJMUxkcqfNr6qW";
 
 type FormErrors = {
   firstName?: string;
