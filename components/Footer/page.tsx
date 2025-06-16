@@ -44,7 +44,7 @@ const Footer = () => {
     {
       id: "1",
       text: "Pre Register",
-      link: "#",
+      link: "/Waitlist",
     },
     {
       id: "2",

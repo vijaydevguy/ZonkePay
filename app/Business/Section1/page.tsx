@@ -88,7 +88,7 @@ const Page = () => {
         transition={{ delay: 1.3 }}
       >
         <Button 
-          link="#"
+          link="https://merchants.zonkepay.com"
           text="Register Your Business"
           className="w-full md:w-auto"
         />

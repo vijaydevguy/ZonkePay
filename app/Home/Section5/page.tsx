@@ -147,12 +147,12 @@ const TrustPage = () => {
         variants={container}
       >
         <motion.h2
-          className="text-white text-[24px] font-semibold"
+          className="text-white text-[24px] font-semibold md:w-1/4"
           variants={fadeUp}
         >
-          Built on Trust. Backed by Security.
+          Built on Trust. {" "}<br /> Backed by Security.
         </motion.h2>
-        <motion.p className="text-white text-[20px]" variants={fadeUp}>
+        <motion.p className="text-[#FFFEF3] text-[20px]" variants={fadeUp}>
           Zonke is committed to providing a safe, secure, and reliable platform,
           for both consumers and businesses.
         </motion.p>
