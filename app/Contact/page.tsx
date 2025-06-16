@@ -261,7 +261,7 @@ const ContactPage = () => {
                 Thank You!
               </h3>
               <p className="text-lg">
-                Your message has been sent successfully. We'll get back to
+                Your message has been sent successfully. {`We'll`} get back to
                 you soon.
               </p>
             </div>

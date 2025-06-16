@@ -287,7 +287,7 @@ const Page = () => {
           <div className="w-full max-w-md">
             {submitStatus === "success" ? (
               <div className="p-4 bg-green-100 text-green-700 rounded-md">
-                Thank you for registering! We'll be in touch soon.
+                Thank you for registering! {`We'll`} be in touch soon.
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4" noValidate>
