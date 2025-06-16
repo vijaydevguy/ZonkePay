@@ -98,12 +98,18 @@ const page = () => {
           viewport={{ margin: "-100px" }}
           variants={container}
         >
-          <motion.div className="flex flex-col" variants={container}>
+          <motion.div className="flex flex-col gap-[16px]" variants={container}>
             <motion.h2 
-              className="text-[40px] text-[#A32C14] leading-[48px]"
+              className="hidden md:flex text-[40px] text-[#A32C14] leading-[48px]"
               variants={textItem}
             >
-              Powering South {`Africa's`} Digital Economy
+              Powering South {`Africa's`}{" "} <br /> Digital Economy
+            </motion.h2>
+            <motion.h2 
+              className="md:hidden flex text-[40px] text-[#A32C14] leading-[48px]"
+              variants={textItem}
+            >
+              Powering South {`Africa's`}{" "}  Digital Economy
             </motion.h2>
             <motion.p 
               className="text-[20px] text-[#8B8A85] mt-2"
@@ -114,7 +120,7 @@ const page = () => {
             </motion.p>
           </motion.div>
 
-          <motion.div className="flex flex-col gap-[24px]" variants={container}>
+          <motion.div className="flex flex-col gap-[24px] mt-6" variants={container}>
             <motion.p 
               className="text-[16px] text-[#8B8A85]"
               variants={textItem}
@@ -135,7 +141,7 @@ const page = () => {
               </Link> */}
 
               <Button
-              text="Are you a consumer? Join the waitlist"
+              text="Pre-register"
               link="/Waitlist"
               className="w-full md:w-auto"
               />

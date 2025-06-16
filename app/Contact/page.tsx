@@ -10,7 +10,9 @@ import emailjs from "@emailjs/browser";
 import flag from "../../assets/SAflag.png";
 import pattern from "../../assets/contact_pattern.png";
 
-import Button from "../../components/Button/page";
+// import Button from "../../components/Button/page";
+
+import Navbar from "../../components/Navbar/page";
 
 type ContactFormData = {
   firstName: string;
@@ -32,8 +34,8 @@ type FormErrors = {
   form?: string;
 };
 
-// const RECAPTCHA_SITE_KEY = "6Lf_SVsrAAAAAJE-1WSvMXGbSdXukogLED_tmSzb";
-const RECAPTCHA_SITE_KEY = "6LdtmMMqAAAAAO0AAfhBlfqofdA-z8CJLNDJUMbM";
+const RECAPTCHA_SITE_KEY = "6Lf_SVsrAAAAAJE-1WSvMXGbSdXukogLED_tmSzb";
+// const RECAPTCHA_SITE_KEY = "6LdtmMMqAAAAAO0AAfhBlfqofdA-z8CJLNDJUMbM";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -201,9 +203,11 @@ const ContactPage = () => {
 
   return (
     <>
-      <div className="flex px-[5%] pt-6">
+       <Navbar />
+
+      {/* <div className="flex px-[5%] pt-6">
         <Button text="back" secondary link="/" className="w-fit md:w-auto" />
-      </div>
+      </div> */}
       <div className="flex flex-col md:flex-row gap-6 px-[5%] py-12 overflow-x-clip md:justify-center">
         <div className="fixed left-0 bottom-0 z-0 w-[180px] md:w-[300px] pointer-events-none select-none">
           <Image src={pattern} alt="pattern" className="w-full h-auto" />

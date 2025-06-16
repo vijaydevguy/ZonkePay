@@ -16,10 +16,12 @@ import right_bottom from "../../assets/right_bottom.png";
 import right_top from "../../assets/pattern.png";
 import flag from "../../assets/SAflag.png";
 
-import Button from "../../components/Button/page";
+// import Button from "../../components/Button/page";
 
-// const RECAPTCHA_SITE_KEY = "6Lf_SVsrAAAAAJE-1WSvMXGbSdXukogLED_tmSzb";
-const RECAPTCHA_SITE_KEY = "6LdtmMMqAAAAAO0AAfhBlfqofdA-z8CJLNDJUMbM";
+import Navbar from "../../components/Navbar/page"
+
+const RECAPTCHA_SITE_KEY = "6Lf_SVsrAAAAAJE-1WSvMXGbSdXukogLED_tmSzb";
+// const RECAPTCHA_SITE_KEY = "6LdtmMMqAAAAAO0AAfhBlfqofdA-z8CJLNDJUMbM";
 
 type FormErrors = {
   firstName?: string;
@@ -190,6 +192,10 @@ const Page = () => {
 
   return (
     <>
+ 
+        <Navbar />
+ 
+
       {/* <div className="flex px-[5%] pt-6">
         <Button text="back" secondary link="/" className="w-fit md:w-auto" />
       </div> */}
@@ -230,14 +236,14 @@ const Page = () => {
         </div> */}
         {/* left */}
         <div className="flex flex-col gap-4 w-full lg:w-1/2 mb-8 lg:mb-0">
-          <div >
+          {/* <div >
             <Button
               text="back"
               secondary
               link="/"
               className="w-fit md:w-auto"
             />
-          </div>
+          </div> */}
           <div className="flex flex-col gap-2">
             {/* top */}
             <div className="flex flex-row gap-2 md:items-end items-center">

@@ -137,7 +137,7 @@ const TrustPage = () => {
   };
 
   return (
-    <div className="overflow-x-clip px-[5%] pb-20 overflow-hidden flex flex-col gap-6">
+    <div className="overflow-x-clip px-[5%] py-20 overflow-hidden flex flex-col gap-6">
       {/* Top red banner */}
       <motion.div
         className="flex md:flex-row flex-col justify-between items-start p-6 rounded-[8px] bg-[#A32C14] md:gap-6 gap-4"
@@ -160,7 +160,7 @@ const TrustPage = () => {
 
       {/* Key Trust Markers section */}
       <motion.div
-        className="flex flex-col gap-4"
+        className="flex flex-col gap-4 mt-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ margin: "-50px", once: true }}
@@ -198,7 +198,7 @@ const TrustPage = () => {
 
       {/* Our Partners section */}
       <motion.div
-        className="flex flex-col gap-2"
+        className="flex flex-col gap-2 mt-20"
         initial="hidden"
         whileInView="visible"
         viewport={{ margin: "-50px", once: true }}
