@@ -54,7 +54,8 @@ const Page = () => {
           variants={fadeUp}
           transition={{ delay: 0.2 }}
         >
-          Grow Your Business.
+          <span className="font-normal">ZonkePay for Business -</span>  Grow Your Business. 
+          {/* Grow Your Business. */}
         </motion.h1>
         
         {/* Second line */}
@@ -88,7 +89,7 @@ const Page = () => {
         transition={{ delay: 1.3 }}
       >
         <Button 
-          link="https://merchants.zonkepay.com"
+          link="https://merchants.zonkepay.com/register "
           text="Register Your Business"
           className="w-full md:w-auto"
         />

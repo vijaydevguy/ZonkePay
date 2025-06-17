@@ -100,17 +100,18 @@ const page = () => {
         >
           <motion.div className="flex flex-col gap-[16px]" variants={container}>
             <motion.h2 
-              className="hidden md:flex text-[40px] text-[#A32C14] leading-[48px]"
+              className="flex text-[40px] text-[#A32C14] leading-[48px]"
               variants={textItem}
             >
-              Powering South {`Africa's`}{" "} <br /> Digital Economy
+              {/* Powering South {`Africa's`}{" "} <br /> Digital Economy */}
+              ZonkePay - Powering South {`Africa's`} Digital Economy
             </motion.h2>
-            <motion.h2 
+            {/* <motion.h2 
               className="md:hidden flex text-[40px] text-[#A32C14] leading-[48px]"
               variants={textItem}
             >
               Powering South {`Africa's`}{" "}  Digital Economy
-            </motion.h2>
+            </motion.h2> */}
             <motion.p 
               className="text-[20px] text-[#8B8A85] mt-2"
               variants={textItem}
