@@ -1,11 +1,10 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
 import Button from "../../../components/Button/page";
-
 
 import img1 from "../../../assets/section1_img.png";
 import leftbg from "../../../assets/page1_bgleft.webp";
@@ -21,33 +20,33 @@ const page = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        when: "beforeChildren"
-      }
-    }
+        when: "beforeChildren",
+      },
+    },
   };
 
   const textItem = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
         duration: 0.6,
-        ease: "easeOut"
-      } 
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const imageAnim = {
     hidden: { opacity: 0, x: 50 },
-    visible: { 
-      opacity: 1, 
-      x: 0, 
-      transition: { 
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
         duration: 0.8,
-        ease: "easeOut"
-      } 
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -91,7 +90,7 @@ const page = () => {
 
       <div className="flex md:flex-row flex-col items-center justify-center overflow-hidden">
         {/* left - animated text content */}
-        <motion.div 
+        <motion.div
           className="flex flex-col gap-6"
           initial="hidden"
           whileInView="visible"
@@ -99,7 +98,7 @@ const page = () => {
           variants={container}
         >
           <motion.div className="flex flex-col gap-[16px]" variants={container}>
-            <motion.h2 
+            <motion.h2
               className="flex text-[40px] text-[#A32C14] leading-[48px]"
               variants={textItem}
             >
@@ -112,7 +111,7 @@ const page = () => {
             >
               Powering South {`Africa's`}{" "}  Digital Economy
             </motion.h2> */}
-            <motion.p 
+            <motion.p
               className="text-[20px] text-[#8B8A85] mt-2"
               variants={textItem}
             >
@@ -121,17 +120,21 @@ const page = () => {
             </motion.p>
           </motion.div>
 
-          <motion.div className="flex flex-col gap-[24px] mt-6" variants={container}>
-            <motion.p 
+          <motion.div
+            className="flex flex-col gap-[24px] mt-6"
+            variants={container}
+          >
+            <motion.p
               className="text-[16px] text-[#8B8A85]"
               variants={textItem}
             >
               {/* Zonke connects merchants and consumers through a secure,
               wallet-first platform built for inclusive growth. */}
-              The fastest way to create your wallet and start paying - all in just a few taps.
+              The fastest way to create your wallet and start paying - all in
+              just a few taps.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className="flex md:flex-row flex-col gap-6"
               variants={textItem}
             >
@@ -142,9 +145,9 @@ const page = () => {
               </Link> */}
 
               <Button
-              text="Pre-register"
-              link="/Waitlist"
-              className="w-full md:w-auto"
+                text="Pre-register"
+                link="/Waitlist"
+                className="w-full md:w-auto"
               />
               {/* <Button
               text="Register Your Business"
@@ -163,7 +166,12 @@ const page = () => {
           viewport={{ margin: "-100px" }}
           variants={imageAnim}
         >
-          <Image src={img1} alt="img" className="pointer-events-none" />
+          <Image
+            src={img1}
+            alt="img"
+            className="pointer-events-none"
+            priority
+          />
         </motion.div>
       </div>
     </div>
@@ -171,9 +179,6 @@ const page = () => {
 };
 
 export default page;
-
-
-
 
 // import Image from "next/image";
 // import React from "react";

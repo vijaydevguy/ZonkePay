@@ -5,26 +5,35 @@
 
 // module.exports = nextConfig;
 
-
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
 
-//   ignoreBuildErrors: true,
+  //   ignoreBuildErrors: true,
 
-// eslint: {
-//     ignoreDuringBuilds: true
-//   },
+  // eslint: {
+  //     ignoreDuringBuilds: true
+  //   },
 
-output: 'export',
-images: {
-  unoptimized: true,
-},
+  //SEO start
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
+
+  // Enable React Strict Mode
+  reactStrictMode: true,
+
+  // Optimize fonts
+  optimizeFonts: true,
+
+  // Enable compression
+  compress: true,
+  //SEO end
 };
 
 export default nextConfig;
-
 
 // module.exports = {
 //   exportPathMap: async function () {
@@ -35,9 +44,6 @@ export default nextConfig;
 //     };
 //   }
 // };
-
-
-
 
 // import type { NextConfig } from "next";
 
