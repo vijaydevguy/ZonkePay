@@ -1,14 +1,17 @@
 "use client";
 import React from "react";
-import Zonkey from "../../assets/Logo.webp";
+// import Zonkey from "../../assets/Logo.webp";
+import Partner1 from "../../assets/Partner1.jpg";
+import Partner2 from "../../assets/Partner2 1.png";
+
 import Image from "next/image";
 
 export const Page = () => {
   const companies = [
-    { name: "Zonkey", logo: Zonkey, id: 1 },
-    { name: "Zonkey", logo: Zonkey, id: 2 },
-    { name: "Zonkey", logo: Zonkey, id: 3 },
-    { name: "Zonkey", logo: Zonkey, id: 4 },
+    { name: "Zonkey", logo: Partner1, id: 1 },
+    { name: "Zonkey", logo: Partner2, id: 2 },
+    // { name: "Zonkey", logo: Zonkey, id: 3 },
+    // { name: "Zonkey", logo: Zonkey, id: 4 },
   ];
 
   // Duplicate the companies array to create seamless looping
