@@ -88,7 +88,7 @@ const Page = () => {
       case "phone":
         if (!value) return "Phone number is required";
         if (!/^\d{10}$/.test(value)) {
-          return "Must be a 10-digit number (e.g., 123456789)";
+          return "Must be a 10-digit number.";
         }
         return;
       default:

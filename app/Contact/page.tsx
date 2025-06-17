@@ -70,7 +70,7 @@ const ContactPage = () => {
   const validatePhone = (phone: string): string | undefined => {
     if (!phone) return "Phone number is required";
     if (!/^\d{10}$/.test(phone))
-      return "Must be a 10-digit number (e.g., 1234567890)";
+      return "Must be a 10-digit number";
     return;
   };
 
